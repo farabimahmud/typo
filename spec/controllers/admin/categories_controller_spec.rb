@@ -63,4 +63,21 @@ describe Admin::CategoriesController do
     assert_raise(ActiveRecord::RecordNotFound) { Category.find(test_id) }
   end
   
+  describe "test_create" do 
+    before(:each) do 
+      test_id = Factory(:category).id
+      assert_nil Category.find(test_id)
+      get :new, :id => test_id
+    end
+  end
+  
+  it "test_create" do 
+    get :new, :id => Factory(:category).id 
+    assert_response :success, :action => 'new'
+  end
+  
+  it "test_create with POST" do 
+    post :new, :id => Factory(:category).id
+    assert_response :redirect, :action => 'new'
+  end
 end
