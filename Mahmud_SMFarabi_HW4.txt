@@ -1,0 +1,2 @@
+GitHub: https://github.com/farabimahmud/typo
+Heroku: https://secure-ravine-58983.herokuapp.com/
